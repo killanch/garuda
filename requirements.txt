@@ -5,6 +5,3 @@ msgpack-python
 pymongo
 redis
 setproctitle
-git+https://github.com/nuagenetworks/bambou.git#egg=bambou
-# Use my PR for now, later change this to `pypred`
-git+https://github.com/primalmotion/pypred.git#egg=pypred

@@ -4,6 +4,9 @@ import os
 from setuptools  import setup
 import pip
 
+with open('requirements.txt') as f:
+    install_requires = f.read().strip().split('\n')
+
 setup(
     name='garuda',
     version='0.0.1',
@@ -25,7 +28,11 @@ setup(
     author_email='christophe.serafin@nuagenetworks.net, antoine@nuagenetworks.net',
     description='Garuda is the future. No more. No less.',
     long_description=open('README.md').read(),
-    install_requires=[str(ir.req) for ir in pip.req.parse_requirements('requirements.txt', session=pip.download.PipSession())],
+    install_requires=install_requires,
+    dependency_links=[
+        'git+https://github.com/nuagenetworks/bambou.git#egg=bambou',
+        'git+https://github.com/primalmotion/pypred.git#egg=pypred'
+    ],
     license='TODO',
     url='TODO'
 )
